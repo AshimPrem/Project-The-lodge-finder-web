@@ -46,14 +46,14 @@ const roomSchema = new mongoose.Schema({
       type: Date,
       default: Date.now,
     },
-    users: [{
+    owner: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',  // Reference to User model
-    }],
+    }
   });
   
   // Create the Room model
   const Room = mongoose.model('Room', roomSchema);
   
   // Export both models
-  module.exports = { Room };
+  module.exports =  Room ;

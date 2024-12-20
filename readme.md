@@ -48,7 +48,7 @@ Before you start, ensure you have the following installed:
 Start by cloning this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/the-lodge-finder-web.git
+git clone https://github.com/AshimPrem/the-lodge-finder-web.git
 ```
 
 ### Backend Setup

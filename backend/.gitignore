@@ -1,0 +1,18 @@
+# Ignore environment variables file
+.env
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore OS-specific files (e.g., Mac's .DS_Store)
+.DS_Store
+
+# Ignore IDE and editor files (e.g., VS Code, JetBrains)
+.vscode/
+.idea/
+
+# Ignore npm-debug log
+npm-debug.log
