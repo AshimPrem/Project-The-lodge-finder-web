@@ -49,7 +49,6 @@ router.post('/signup', async (req, res) => {
         email,
         password: hashedPassword
       });
-      console.log("hello");
       const token = jwt.sign({email},JWT_SECRET)
       //also add validations whether the user already exist or not
       await newUser.save();
@@ -65,6 +64,78 @@ router.post('/signup', async (req, res) => {
     //   res.status(500).json({ error: err.message });
     }
   })
+
+  const userZodSchemaForSignin = z.object({
+    email: z.string()
+    .email("Invalid email format") // Validates email format 
+    .min(1, "Email is required") // Ensures email is provided
+    .max(100, "Email can't be longer than 100 characters"), // Optional length restriction
+  password: z.string()
+    .min(6, "Password must be at least 6 characters long") // Password length validation
+    .max(100, "Password can't be longer than 100 characters"), // Optional length restriction
+  })
+
+  router.post("/signin", async function (req, res) {
+    try {
+      // Check if the user has sent a JWT token
+      const token = req.headers.authorization?.split(' ')[1]; // Assuming the token is sent in the Authorization header as "Bearer <token>"
+  
+      if (token) {
+        // Verify the JWT token to check if the user is already signed in
+        jwt.verify(token, JWT_SECRET, async (err, decoded) => {
+          if (err) {
+            return res.status(401).json({
+              message: "Invalid or expired token"
+            });
+          }
+  
+          // Token is valid, user is already signed in
+          return res.status(200).json({
+            message: "Sign-in via JWT token successful now I let you access my database",
+            token: token,  // Return the same token to avoid sending a new one
+          });
+        });
+      } else {
+        // No token, so continue with the usual email/password authentication
+  
+        // Validate the input data (email and password) using Zod
+        const parsedData = userZodSchemaForSignin.parse(req.body);
+        const { email, password } = parsedData;
+  
+        // Find user by email
+        const existingUser = await User.findOne({ email });
+  
+        if (!existingUser) {
+          return res.status(404).json({
+            message: "User not found, please sign up first."
+          });
+        }
+  
+        // Compare the entered password with the stored hash
+        const isMatch = await bcrypt.compare(password, existingUser.password);
+  
+        if (!isMatch) {
+          return res.status(404).json({
+            message: "Incorrect password, please try again."
+          });
+        }
+  
+        // Generate a new JWT token for the user
+        const newToken = jwt.sign({ email: existingUser.email }, JWT_SECRET, { expiresIn: '1h' });
+        
+        res.status(200).json({
+          message: "Sign-in successful!",
+          token: newToken
+        });
+      }
+    } catch (err) {
+      return res.status(400).json({
+        message: "Please enter correct credentials",
+        error: err.message
+      });
+    }
+  });
+  
 module.exports=router
 
 
