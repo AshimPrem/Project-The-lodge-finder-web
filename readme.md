@@ -104,11 +104,6 @@ The backend will run on `http://localhost:3000`.
 - **Deployment**: For production deployment, you can use platforms like Heroku, AWS, or DigitalOcean for the backend and Vercel or Netlify for the frontend.
 
 ---
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
 
 ## Contributing
