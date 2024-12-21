@@ -176,7 +176,7 @@ router.put("/update",authenticateUser,async(req,res)=>{
           if(email) user.email=email;
           if(password){
             // const salt = await bcrypt.genSalt(10); // as we know adding salt to the passwords make it more secure 
-              hashedPassword = await bcrypt.hash(password,10); // hashed the password and 10 is the salt value
+              const hashedPassword = await bcrypt.hash(password,10); // hashed the password and 10 is the salt value
               user.password = hashedPassword
           }
           // now save the updated data
