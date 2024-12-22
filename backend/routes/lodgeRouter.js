@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const Room = require('../models/Room'); 
+const lodge = require('../models/Lodge'); 
 
 
 module.exports = router;
