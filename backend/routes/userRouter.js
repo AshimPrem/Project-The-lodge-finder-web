@@ -43,16 +43,17 @@ router.post('/signup', async (req, res) => {
       
       // Hash the password before saving
       const hashedPassword = await bcrypt.hash(password, 10);
-      const newUser = new User({
+      const newUser = await User.create({
         name,
         email,
         password: hashedPassword
       });
       const token = jwt.sign({email},config.jwtSecret)
       //also add validations whether the user already exist or not
-      await newUser.save();
+      // await newUser.save();
+      const userId= newUser._id;
       //send jwt token 
-      res.status(201).json({ message: 'User created successfully', user: newUser , token});
+      res.status(201).json({ message: 'User created successfully', userId , token});
     } catch (err) {
       if (err instanceof z.ZodError) {
         // Zod validation error
