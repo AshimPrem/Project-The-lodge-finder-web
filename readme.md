@@ -92,7 +92,7 @@ npm start
 The backend will run on `http://localhost:3000`.
 
 ### Frontend Setup
-- I'll write later on for frontend setup
+- I'll write the frontend setup later.
 
 ---
 
