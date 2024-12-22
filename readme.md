@@ -8,11 +8,11 @@
 ---
 ## Motivation
 
-When I moved to Hazaribag, Jharkhand, India, for my higher studies, I faced a big challenge: finding a place to stay. As a student, I needed a room, but all I could find were small rooms with one or two beds, or rooms that were too expensive. The biggest problem was that I didn't know where rooms were available. I was trying to find lodges online to check availability, but there was no way to know. I had to go door-to-door, asking every place if they had a room free. It was tiring, time-consuming, and very stressful.
+When I moved to Hazaribag, Jharkhand, India, for my higher studies, I faced a significant challenge: finding a place to stay. As a student, I needed a room, but all I could find were small rooms with one or two beds, or rooms that were too expensive. The biggest problem was that I didn’t know where rooms were available. I tried searching online for lodges, but there was no easy way to check availability. I had to go door-to-door, asking every place if they had a room free. It was tiring, time-consuming, and stressful.
 
-This made me think about how I could make it easier for students like me. That's why I created the Lodge Finder Web. This website helps students find rooms or lodges quickly and easily. Students can search online, see which rooms are available, compare prices, and even book a place to stay – without having to go from door to door.
+This experience led me to think about how I could make the process easier for students like me. That's when I created Lodge Finder Web — a website designed to help students in Hazaribag find rooms or lodges quickly and easily. The platform allows students to search for available lodge rooms online, compare prices, and even book a place to stay, all without the need to go from door to door.
 
-I wanted to solve the problem I faced and make finding a place to stay simpler, so students can focus on their studies without wasting time searching for accommodation.
+My goal with this project was to address the local issue I faced and make the process of finding accommodation more efficient for students, so they can focus more on their studies and less on the stress of finding a place to stay
 
 ---
 
