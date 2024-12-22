@@ -1,7 +1,18 @@
-# In progress project!
+# Project in progress.
+
+---
+
 # Project-The lodge finder web 
  The Lodge Finder Web is a web application designed to help users easily find and book lodges based on their location, preferences, and budget. The platform allows users to search for available lodges, view detailed information, and compare options. It offers features such as user reviews, ratings, and a streamlined booking process. Whether you’re planning a weekend getaway or a longer stay, The Lodge Finder Web makes it simple to find the perfect place to stay with ease and convenience.
 
+---
+## Motivation
+
+When I moved to Hazaribag, Jharkhand, India, for my higher studies, I faced a big challenge: finding a place to stay. As a student, I needed a room, but all I could find were small rooms with one or two beds, or rooms that were too expensive. The biggest problem was that I didn't know where rooms were available. I was trying to find lodges online to check availability, but there was no way to know. I had to go door-to-door, asking every place if they had a room free. It was tiring, time-consuming, and very stressful.
+
+This made me think about how I could make it easier for students like me. That's why I created the Lodge Finder Web. This website helps students find rooms or lodges quickly and easily. Students can search online, see which rooms are available, compare prices, and even book a place to stay – without having to go from door to door.
+
+I wanted to solve the problem I faced and make finding a place to stay simpler, so students can focus on their studies without wasting time searching for accommodation.
 
 ---
 
@@ -81,7 +92,7 @@ npm start
 The backend will run on `http://localhost:3000`.
 
 ### Frontend Setup
-- I'll write later on for frontend setup
+- I'll write the frontend setup later.
 
 ---
 
@@ -102,12 +113,6 @@ The backend will run on `http://localhost:3000`.
 - **Security**: Passwords are securely hashed using **bcrypt** before being stored in the database. This ensures user data protection.
 - **Cross-Origin Resource Sharing (CORS)**: Configured to allow communication between the frontend and backend, even if they are running on different ports during development.
 - **Deployment**: For production deployment, you can use platforms like Heroku, AWS, or DigitalOcean for the backend and Vercel or Netlify for the frontend.
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
