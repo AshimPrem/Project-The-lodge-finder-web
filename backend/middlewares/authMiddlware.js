@@ -1,4 +1,4 @@
-
+const User = require("../models/User")
 const jwt = require('jsonwebtoken')
 const config = require('../config')
 
@@ -16,7 +16,7 @@ const config = require('../config')
         const decoded = jwt.verify(token, config.jwtSecret);
         //attaching user information to the request object for further use.
         req.user = decoded
-        const user = await User.findOne(req.user.email);  // Assuming the payload has email
+        const user = await User.findOne({email:req.user.email});  // Assuming the payload has email
         if (!user) {
           return res.status(401).json({ message: 'User not found' });
         }

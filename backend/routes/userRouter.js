@@ -200,8 +200,10 @@ router.put("/update",authenticateUser,async(req,res)=>{
 router.delete("/delete-account",authenticateUser,async(req,res)=>{
         try{
           // Access the user ID from the req object 
-        const userId = req.user.id;
-        const user = await User.findByIdAndDelete(userId)
+        const userId = req.user._id;
+        const user = await User.findByIdAndDelete({
+          _id:userId
+        })
 
         if(!user){
           res.status(404).json({
