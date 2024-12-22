@@ -8,7 +8,7 @@
 ---
 ## Motivation
 
-When I moved to Hazaribag Jharkhand India for my higher studies, I faced a big challenge: finding a place to stay. As a student, I needed a room, but all I could find were small rooms with one or two beds, or rooms that were too expensive. The biggest problem was that I didn't know where rooms were available. I had to go door-to-door, asking every place if they had a room free. It was tiring, time-consuming, and very stressful.
+When I moved to Hazaribag, Jharkhand, India, for my higher studies, I faced a big challenge: finding a place to stay. As a student, I needed a room, but all I could find were small rooms with one or two beds, or rooms that were too expensive. The biggest problem was that I didn't know where rooms were available. I was trying to find lodges online to check availability, but there was no way to know. I had to go door-to-door, asking every place if they had a room free. It was tiring, time-consuming, and very stressful.
 
 This made me think about how I could make it easier for students like me. That's why I created the Lodge Finder Web. This website helps students find rooms or lodges quickly and easily. Students can search online, see which rooms are available, compare prices, and even book a place to stay – without having to go from door to door.
 
