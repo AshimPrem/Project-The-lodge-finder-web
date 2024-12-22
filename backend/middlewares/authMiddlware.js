@@ -4,6 +4,7 @@ const config = require('../config')
 
 
  const authenticateUser = async (req,res,next)=>{
+    // token contain "Bearer <token>" 
     const token = req.headers.authorization.split(' ')[1];
     // what if authorization header empty ?
     if (!token) {
