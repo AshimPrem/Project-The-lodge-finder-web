@@ -4,10 +4,27 @@ import InputBox from "../components/inputbox";
 import Navbar from "../components/navbar";
 import Subheading from "../components/subheading";
 import { Link } from "react-router-dom";
-export default function Signup() {
+export default function Signin() {
   return (
     <div>
-      <div>{<Navbar />}</div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <div>{<Heading label="Lodge finder web" />}</div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            gap: "10px",
+          }}
+        >
+          <div>{<Button label={"About us"} />}</div>
+          <div>{<Button label={"Sign up"} />}</div>
+        </div>
+      </div>
       <div
         style={{
           marginLeft: "100px",
@@ -27,7 +44,7 @@ export default function Signup() {
               padding: "10px",
             }}
           >
-            <Heading label={"sign up"} />
+            <Heading label={"sign in"} />
           </div>
           <div
             style={{
@@ -50,13 +67,6 @@ export default function Signup() {
                   margin: "10px",
                 }}
               >
-                <InputBox label={"Name"} somePlaceholder={"e.g John doe"} />
-              </div>
-              <div
-                style={{
-                  margin: "10px",
-                }}
-              >
                 <InputBox
                   label={"Email"}
                   somePlaceholder={"e.g john@gmail.com"}
@@ -67,7 +77,7 @@ export default function Signup() {
                   margin: "10px",
                 }}
               >
-                <InputBox label={"Password"} somePlaceholder={"e.g 1234 "} />
+                <InputBox label={"Password"} somePlaceholder={"e.g 1235"} />
               </div>
               <div
                 style={{
@@ -76,7 +86,7 @@ export default function Signup() {
                   padding: "10px",
                 }}
               >
-                <Button label={"Sign up"} />
+                <Button label={"Sign in"} />
               </div>
               <div
                 style={{
@@ -85,10 +95,10 @@ export default function Signup() {
                 }}
               >
                 <div>
-                  <Subheading label={"Alreay have an account ?"} />
+                  <Subheading label={"Don't have an account ?"} />
                 </div>
                 <div>
-                  <Link>Sign in</Link>
+                  <Link>Sign up</Link>
                 </div>
               </div>
             </div>

@@ -1,8 +1,8 @@
-export default function InputBox({ label }) {
+export default function InputBox({ label, somePlaceholder }) {
   return (
     <div>
       <div>{label}</div>
-      <input type="text" placeholder="e.g John doe" />
+      <input type="text" placeholder={somePlaceholder} />
     </div>
   );
 }
