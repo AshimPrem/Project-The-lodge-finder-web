@@ -8,6 +8,8 @@ router.use(bodyParser.json())
 const { z } = require('zod');
 const bcrypt = require('bcrypt');
 const authenticateUser = require('../middlewares/authMiddlware');
+const app = express()
+app.use(express.json()); // Middleware to parse JSON request bodies
 
 // Define the schema for user input validation
 const userSchema = z.object({
@@ -27,10 +29,10 @@ const userSchema = z.object({
 router.post('/signup', async (req, res) => {
     try {
       // Validate the incoming data against the Zod schema
-      const parsedData = userSchema.parse(req.body); // This will throw an error if validation fails
-        
+      const parsedData = userSchema.safeParse(req.body); // This will throw an error if validation fails
+        console.log(parsedData);
       // If validation is successful, create a new user
-      const { name, email, password } = parsedData;
+      const { name, email, password } = parsedData.data;
       const existingUser = await User.findOne({
         email
       })
@@ -61,7 +63,7 @@ router.post('/signup', async (req, res) => {
             message:"User creation failed for some wrong input ! please enter valid credentials"
         });
       }
-      res.status(500).json({ message:"error occurred during signup" });
+      res.status(500).json({ message:"User creation failed" });
     }
   })
 

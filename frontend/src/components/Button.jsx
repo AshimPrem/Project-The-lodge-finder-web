@@ -1,7 +1,10 @@
-export default function Button({ label }) {
+import { Link } from "react-router-dom";
+export default function Button({ label ,onClick,to}) {
   return (
     <div>
-      <button>{label}</button>
+        <Link to={to}>
+        <button onClick={onClick}>{label}</button>
+        </Link>
     </div>
   );
 }

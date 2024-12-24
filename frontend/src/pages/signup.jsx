@@ -1,10 +1,15 @@
+import { useState } from "react";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
 import InputBox from "../components/inputbox";
 import Navbar from "../components/navbar";
 import Subheading from "../components/subheading";
 import { Link } from "react-router-dom";
+import axios from "axios"
 export default function Signup() {
+  const [name ,setName] =useState("")
+  const [email ,setEmail] =useState("")
+  const [password ,setPassword] =useState("")
   return (
     <div>
       <div>{<Navbar />}</div>
@@ -50,14 +55,19 @@ export default function Signup() {
                   margin: "10px",
                 }}
               >
-                <InputBox label={"Name"} somePlaceholder={"e.g John doe"} />
+                <InputBox onChange={e=>{
+                  setName(e.target.value)
+                }} label={"Name"} somePlaceholder={"e.g John doe"} />
               </div>
               <div
                 style={{
                   margin: "10px",
                 }}
               >
-                <InputBox
+                <InputBox 
+                  onChange={e=>{
+                    setEmail(e.target.value)
+                  }}
                   label={"Email"}
                   somePlaceholder={"e.g john@gmail.com"}
                 />
@@ -67,7 +77,9 @@ export default function Signup() {
                   margin: "10px",
                 }}
               >
-                <InputBox label={"Password"} somePlaceholder={"e.g 1234 "} />
+                <InputBox onChange={e=>{
+                  setPassword(e.target.value);
+                }} label={"Password"} somePlaceholder={"e.g 123456 "} />
               </div>
               <div
                 style={{
@@ -76,7 +88,17 @@ export default function Signup() {
                   padding: "10px",
                 }}
               >
-                <Button label={"Sign up"} />
+                {<Button onClick={async(e)=>{
+                       await axios.post("http://localhost:3000/api/v1/users/signup",{
+                        name,
+                        email,
+                        password
+                      }, {
+                        headers: {
+                        'Content-Type': 'application/json'  // Ensure this header is set to application/json
+                      }
+                    })
+                }} label={"Sign up"} />}
               </div>
               <div
                 style={{
@@ -88,7 +110,7 @@ export default function Signup() {
                   <Subheading label={"Alreay have an account ?"} />
                 </div>
                 <div>
-                  <Link>Sign in</Link>
+                  <Link to={"/signin"}>Sign in</Link>
                 </div>
               </div>
             </div>

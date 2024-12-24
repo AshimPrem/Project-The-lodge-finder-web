@@ -31,7 +31,15 @@ export default function Home() {
           padding: "10px",
         }}
       >
-        <Button label="get started or sign up" />
+        <div>
+          {<Button to={"/signup"} label={"get started with signup"}/>}
+        </div>
+      </div>
+      <div>
+         <section id="about-us">
+              <h1>About us</h1>
+              <p>This is about us paragraph section</p>
+        </section>
       </div>
     </div>
   );

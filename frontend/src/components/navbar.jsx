@@ -1,5 +1,6 @@
 import Heading from "./Heading";
 import Button from "./Button";
+import Home from "../pages/home";
 export default function Navbar() {
   return (
     <div
@@ -15,8 +16,9 @@ export default function Navbar() {
           gap: "10px",
         }}
       >
+        <Button to={"/"} label={"Home"}/>
         <Button label={"About us"} />
-        <Button label={"Sign in"} />
+        <Button to={"/signin"} label={"Sign in"} />
       </div>
     </div>
   );

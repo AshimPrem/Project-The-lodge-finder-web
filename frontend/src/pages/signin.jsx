@@ -21,8 +21,9 @@ export default function Signin() {
             gap: "10px",
           }}
         >
+          <div>{<Button to={"/"} label={"Home"}/>}</div>
           <div>{<Button label={"About us"} />}</div>
-          <div>{<Button label={"Sign up"} />}</div>
+          <div>{<Button to={"/signup"} label={"Sign up"} />}</div>
         </div>
       </div>
       <div
@@ -98,7 +99,7 @@ export default function Signin() {
                   <Subheading label={"Don't have an account ?"} />
                 </div>
                 <div>
-                  <Link>Sign up</Link>
+                  <Link to={"/signup"}>Sign up</Link>
                 </div>
               </div>
             </div>

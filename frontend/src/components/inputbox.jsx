@@ -1,8 +1,8 @@
-export default function InputBox({ label, somePlaceholder }) {
+export default function InputBox({ label, somePlaceholder , onChange }) {
   return (
     <div>
       <div>{label}</div>
-      <input type="text" placeholder={somePlaceholder} />
+      <input onChange={onChange} type="text" placeholder={somePlaceholder} />
     </div>
   );
 }
