@@ -6,9 +6,9 @@ const lodgeSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    capacity: {
-      type: Number,
-      required: true,
+    description:{
+        type:String,
+        required:true
     },
     location: {
       type: String,
