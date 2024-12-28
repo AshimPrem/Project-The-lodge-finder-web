@@ -6,19 +6,15 @@ mongoose.connect('mongodb://localhost:27017/mydatabase')
   .catch(err => console.log('Failed to connect to MongoDB', err));
 
 
-
-
-
-
 // Define the schema for Room
 const lodgeSchema = new mongoose.Schema({
     name: {
       type: String,
       required: true,
     },
-    capacity: {
-      type: Number,
-      required: true,
+    description:{
+        type:String,
+        required:true
     },
     location: {
       type: String,
